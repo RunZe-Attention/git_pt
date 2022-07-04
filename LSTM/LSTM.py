@@ -32,8 +32,10 @@ def lstm_forward(input,initial_states,w_ih,w_hh,b_ih,b_hh):
     batch_w_hh = w_hh.unsqueeze(0).tile(bs,1,1) #[bs, 4*h_size, h_size]
     for t in range(T):
         x = input[:, t, :] # [batch_size,i_size]
+
         w_times_x = torch.bmm(batch_w_ih, x.unsqueeze(-1))
         w_times_x = w_times_x.squeeze(-1) # [bs 4*h_size]
+
 
         w_times_h_prev = torch.bmm(batch_w_hh, prev_h.unsqueeze(-1))
         w_times_h_prev = w_times_h_prev.squeeze(-1) # [bs 4*h_size]
