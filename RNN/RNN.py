@@ -41,3 +41,4 @@ def rnn_forward(input,weight_ih,bias_ih,weight_hh,bias_hh,h_prev):
 
 
 
+

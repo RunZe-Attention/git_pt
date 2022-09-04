@@ -4,7 +4,7 @@ from torchvision.io import read_image
 from torch.utils.data import Dataset
 
 class CustomImageDataset(Dataset):
-    def __init__(self, annotations_file, img_dir, transform=None, target_transform=None):
+    def __init__(self, annotations_file, img_dir = None, transform=None, target_transform=None):
         self.img_labels = pd.read_csv(annotations_file)
         self.img_dir = img_dir
         self.transform = transform
@@ -22,3 +22,8 @@ class CustomImageDataset(Dataset):
         if self.target_transform:
             label = self.target_transform(label)
         return image, label
+
+
+if __name__ == '__main__':
+    CID = CustomImageDataset("./data/FashionMNIST/labels.csv",)
+
