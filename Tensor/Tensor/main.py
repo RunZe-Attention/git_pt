@@ -60,6 +60,8 @@ a = torch.zeros([9,9],dtype=torch.int32)
 print(a.dtype)
 print(torch.ones_like(a).dtype)
 
+torch.set_default_tensor_type(torch.DoubleTensor )
+
 print("--------\n")
 print(torch.arange(start=4,end=10,step=2))
 #print(torch.range(start=0,end=5,step=1,dtype=torch.int32))

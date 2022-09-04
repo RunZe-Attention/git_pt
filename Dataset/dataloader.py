@@ -20,6 +20,10 @@ test_data = datasets.FashionMNIST(
 )
 
 
+
+
+print(len(training_data))
+
 train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
 
 # 通常test数据不需要shuffle
